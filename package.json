@@ -1,5 +1,5 @@
 {
-  "name": "mkdirps-expand",
+  "name": "mkdirps-brackets",
   "version": "0.0.1",
   "description": "mkdirp functionality with brace expansion capabilities",
   "main": "index.js",
