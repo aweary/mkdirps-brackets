@@ -1,11 +1,12 @@
 # mkdirp-brackets
 
-A small utility that uses `mkdirp`, `async`, and `bracket-expansion` to allow for bracketed file paths when using `mkdirp`.
+A small utility that provides bracket-expansion syntax capabilities to `mkdirp`.
+
 ## Installation
 
 Use npm to install:
 
-`npm install --save mkdirp-brackets`
+`npm install mkdirp-brackets`
 
 ## Usage
 
