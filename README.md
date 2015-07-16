@@ -1,4 +1,4 @@
-# mkdirp-brackets
+# mkdirps-brackets
 
 A small utility that provides bracket-expansion syntax capabilities to `mkdirp`.
 
@@ -6,7 +6,7 @@ A small utility that provides bracket-expansion syntax capabilities to `mkdirp`.
 
 Use npm to install:
 
-`npm install mkdirp-brackets`
+`npm install mkdirps-brackets`
 
 ## Usage
 
@@ -14,7 +14,7 @@ Anyone familiar with using a `mkdir -p` in a shell will be familiar with the bra
 For example, if you wanted to created a basic `src` folder for a frontend project, you could do:
 
 ```js
-var mkdirp = require('mkdirp-brackets');
+var mkdirp = require('mkdirps-brackets');
 
 mkdirp('src/{styles,scripts}', function(err){
     if(err) throw err;
