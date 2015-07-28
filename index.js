@@ -16,7 +16,7 @@ module.exports = mkdirps
 function mkdirps(path, callback) {
 
   if (!path || typeof path !== 'string') {
-    _callback(new Error('No valid path(s) provided!'))
+    callback(new Error('No valid path(s) provided!'))
     return
   }
 
