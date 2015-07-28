@@ -1,5 +1,7 @@
 # mkdirps-brackets
 
+[![Build Status](https://travis-ci.org/Aweary/mkdirps-brackets.svg?branch=master)](https://travis-ci.org/Aweary/mkdirps-brackets)
+
 A small utility that provides bracket-expansion syntax capabilities to `mkdirp`.
 
 ## Installation
