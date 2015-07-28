@@ -1,29 +1,47 @@
-var expand  = require('brace-expansion');
-var async = require('async');
-var fs = require('fs');
-var mkdirp = require('mkdirp');
+var expand  = require('brace-expansion')
+var async = require('async')
+var fs = require('fs')
+var mkdirp = require('mkdirp')
 
-module.exports = function(path, _callback) {
+module.exports = mkdirps
+
+/**
+ * Validate and parse the directory structure
+ * from the passed path string
+ *
+ * @param  {String} path       directories to create
+ * @param  {function} callback user provided CB function
+ */
+
+function mkdirps(path, callback) {
 
   if (!path || typeof path !== 'string') {
-    _callback(new Error('No valid path(s) provided!'));
-    return;
+    _callback(new Error('No valid path(s) provided!'))
+    return
   }
 
-  var expandedPath = expand(path);
-  async.each(expandedPath, function(path, callback) {
+  var expanded = expand(path)
+  async.each(expanded, iterate)
+  callback(null)
 
-    try {  var defined = fs.statSync(path, function(err, stats) { return true }); }
+}
 
-    catch (err) { var defined = false; };
+/**
+ * Iterate over each parsed path folder and
+ * check if it needs to be created
+ *
+ * @param  {String}   path      expanded path
+ * @param  {Function} callback  async callback
+ */
 
-    if (!defined) {
-      mkdirp(path);
-    }
+function iterate(path, callback) {
 
-    callback(null);
-  });
+  try { fs.lstatSync(path) }
+  catch (err) { var defined = false }
 
-  _callback(null);
+  if (!defined) {
+    mkdirp(path)
+  }
 
-};
+  callback(null)
+}
